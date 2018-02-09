@@ -15,7 +15,8 @@ uses
   wMessagesHook in 'Common\wMessagesHook.pas',
   u_appParamsFuncs in 'Common\u_appParamsFuncs.pas',
   u_AppLogClass in 'Common\u_AppLogClass.pas',
-  dm_VIDir in 'dm_VIDir.pas' {VD_DM: TDataModule};
+  dm_VIDir in 'dm_VIDir.pas' {VD_DM: TDataModule},
+  dm_VIReports in 'dm_VIReports.pas' {VRep_DM: TDataModule};
 
 {$R *.res}
 
@@ -64,6 +65,7 @@ begin
       Application.Initialize;
       Application.CreateForm(TVD_DM, VD_DM);
   Application.CreateForm(TVIDirectForm, VIDirectForm);
+  Application.CreateForm(TVRep_DM, VRep_DM);
   Application.Run;
      end;
   finally

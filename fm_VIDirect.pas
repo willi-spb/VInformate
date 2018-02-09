@@ -111,6 +111,8 @@ type
     btn_TClearGraph: TButton;
     btn_WSelDir: TButton;
     btn_TSelectDir: TButton;
+    btn1: TButton;
+    btnOpenExp: TButton;
     procedure FormCreate(Sender: TObject);
     procedure actReopenTablesExecute(Sender: TObject);
     procedure actAddUserExecute(Sender: TObject);
@@ -125,6 +127,8 @@ type
     procedure img_GraphLoaded(Sender: TObject; const FileName: string);
     procedure btn_TClearUGraphClick(Sender: TObject);
     procedure btn_WSelDirClick(Sender: TObject);
+    procedure btn1Click(Sender: TObject);
+    procedure btnOpenExpClick(Sender: TObject);
   private
     { Private declarations }
     FDefPath:string;
@@ -141,7 +145,23 @@ implementation
 
 {$R *.fmx}
 
-uses DateUtils;
+uses DateUtils,
+     {$IFDEF MSWINDOWS}
+     FMX.Platform.Win,
+     ShellApi,
+     {$ENDIF}
+     dm_VIReports;
+
+
+procedure SelectFileInExplorer(const a_Fn: string);
+begin
+{$IFDEF MSWINDOWS}
+  ShellExecute(FmxHandleToHWND(Application.MainForm.Handle), 'open', 'explorer.exe',
+  //  PWideChar('/select,"' +ExcludeTrailingPathDelimiter(a_Fn)+'"'), nil,1);  //- select folder from 1 up level opening
+  PWideChar('"' +ExcludeTrailingPathDelimiter(a_Fn)+'"'), nil,1);
+{$ENDIF}
+end;
+
 
 procedure TVIDirectForm.actAddTaskExecute(Sender: TObject);
 begin
@@ -243,6 +263,16 @@ begin
  end;
 end;
 
+procedure TVIDirectForm.btn1Click(Sender: TObject);
+begin
+  VRep_DM.GenerateTaskList(0);
+end;
+
+procedure TVIDirectForm.btnOpenExpClick(Sender: TObject);
+begin
+  SelectFileInExplorer(VD_DM.FDT_Tasks.FieldByName('CATALOG').AsWideString);
+end;
+
 procedure TVIDirectForm.btn_TClearUGraphClick(Sender: TObject);
 begin
  case TComponent(Sender).Tag of
@@ -275,10 +305,14 @@ function TVIDirectForm.FillCatalogData(const ADS: TDataset;
       LF:TField;
 begin
  Result:=false;
+ LF:=ADS.FieldByName(aFieldName);
+ Assert(Assigned(LF),'DirectForm.ClearBlobData - field not Found!');
+ ///
+ if LF.IsNull=false then
+    LDir:=LF.AsWideString
+ else LDir:='';
+ ///
  if SelectDirectory('Select for '+aFieldName,'',LDir) then
-    begin
-     LF:=ADS.FieldByName(aFieldName);
-     Assert(Assigned(LF),'DirectForm.ClearBlobData - field not Found!');
      try
        ADS.Edit;
        LF.AsWideString:=LDir;
@@ -286,7 +320,6 @@ begin
        finally
       ADS.Post;
      end;
-    end;
 end;
 
 procedure TVIDirectForm.FormCreate(Sender: TObject);

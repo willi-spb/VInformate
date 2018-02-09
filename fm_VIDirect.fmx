@@ -545,6 +545,16 @@ object VIDirectForm: TVIDirectForm
           Text = 'Dir'
           OnClick = btn_WSelDirClick
         end
+        object btnOpenExp: TButton
+          Position.X = 920.000000000000000000
+          Position.Y = 144.000000000000000000
+          Size.Width = 65.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 19
+          Text = 'Open>'
+          OnClick = btnOpenExpClick
+        end
       end
       object GridTasks: TGrid
         Align = Client
@@ -587,6 +597,13 @@ object VIDirectForm: TVIDirectForm
           DataSource = BindSourceDB_tasks
           xRadius = 4.000000000000000000
           yRadius = 4.000000000000000000
+        end
+        object btn1: TButton
+          Position.X = 496.000000000000000000
+          Position.Y = 8.000000000000000000
+          TabOrder = 6
+          Text = 'btn1'
+          OnClick = btn1Click
         end
       end
     end
