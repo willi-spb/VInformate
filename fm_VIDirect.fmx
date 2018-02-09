@@ -1,0 +1,958 @@
+object VIDirectForm: TVIDirectForm
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 685
+  ClientWidth = 1031
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object tbc_D: TTabControl
+    Align = Client
+    Size.Width = 1031.000000000000000000
+    Size.Height = 685.000000000000000000
+    Size.PlatformDefault = False
+    TabIndex = 2
+    TabOrder = 0
+    TabPosition = PlatformDefault
+    Sizes = (
+      1031s
+      659s
+      1031s
+      659s
+      1031s
+      659s)
+    object tiUsers: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 56.000000000000000000
+      Size.Height = 26.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'tiUsers'
+      ExplicitSize.cx = 56.000000000000000000
+      ExplicitSize.cy = 26.000000000000000000
+      object GridUsers: TGrid
+        Align = Client
+        CanFocus = True
+        ClipChildren = True
+        Margins.Left = 4.000000000000000000
+        Margins.Top = 4.000000000000000000
+        Margins.Right = 4.000000000000000000
+        Margins.Bottom = 4.000000000000000000
+        Size.Width = 1023.000000000000000000
+        Size.Height = 412.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        Options = [Editing, ColumnResize, ColumnMove, ColLines, RowLines, RowSelect, Tabs, Header, HeaderClick, AutoDisplacement]
+        Viewport.Width = 1003.000000000000000000
+        Viewport.Height = 387.000000000000000000
+      end
+      object pnl_UData: TPanel
+        Align = Bottom
+        Position.Y = 461.000000000000000000
+        Size.Width = 1031.000000000000000000
+        Size.Height = 198.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        object mmo_UComment: TMemo
+          Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+          DataDetectorTypes = []
+          Position.X = 544.000000000000000000
+          Position.Y = 80.000000000000000000
+          Size.Width = 481.000000000000000000
+          Size.Height = 57.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+          Viewport.Width = 477.000000000000000000
+          Viewport.Height = 53.000000000000000000
+        end
+        object lbl_Desc_UComment: TLabel
+          Position.X = 544.000000000000000000
+          Position.Y = 56.000000000000000000
+          Text = 'Commentary:'
+        end
+        object edt_UContacts: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 4
+          Position.X = 16.000000000000000000
+          Position.Y = 24.000000000000000000
+          Size.Width = 513.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object lbl_UContacts: TLabel
+          Position.X = 16.000000000000000000
+          Position.Y = 8.000000000000000000
+          Text = 'Contacts:'
+        end
+        object edt_UCatalog: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 3
+          Position.X = 544.000000000000000000
+          Position.Y = 25.000000000000000000
+          Size.Width = 481.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object lbl_UCatalog: TLabel
+          Position.X = 544.000000000000000000
+          Position.Y = 8.000000000000000000
+          Text = 'Catalog:'
+        end
+        object mmo_UserInfo: TMemo
+          Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+          DataDetectorTypes = []
+          Position.X = 14.000000000000000000
+          Position.Y = 80.000000000000000000
+          Size.Width = 515.000000000000000000
+          Size.Height = 57.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          Viewport.Width = 511.000000000000000000
+          Viewport.Height = 53.000000000000000000
+        end
+        object lbl_UInfo: TLabel
+          Position.X = 16.000000000000000000
+          Position.Y = 56.000000000000000000
+          Text = 'User information:'
+        end
+        object dt_User1: TDateEdit
+          Date = 43139.000000000000000000
+          Position.X = 16.000000000000000000
+          Position.Y = 152.000000000000000000
+          Size.Width = 225.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 8
+        end
+      end
+      object pnl_UTop: TPanel
+        Align = Top
+        Size.Width = 1031.000000000000000000
+        Size.Height = 41.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        object btnAddUser: TButton
+          Action = actAddUser
+          Enabled = True
+          ImageIndex = -1
+          Position.X = 16.000000000000000000
+          Position.Y = 8.000000000000000000
+          TabOrder = 0
+          Visible = True
+        end
+        object NavigatorBindSourceDB_Users: TBindNavigator
+          Position.X = 120.000000000000000000
+          Position.Y = 8.000000000000000000
+          Size.Width = 240.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 5
+          DataSource = BindSourceDB_Users
+          xRadius = 4.000000000000000000
+          yRadius = 4.000000000000000000
+        end
+      end
+    end
+    object tiWorks: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 61.000000000000000000
+      Size.Height = 26.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'tiWorks'
+      ExplicitSize.cx = 61.000000000000000000
+      ExplicitSize.cy = 26.000000000000000000
+      object Panel1: TPanel
+        Align = Bottom
+        Position.Y = 461.000000000000000000
+        Size.Width = 1031.000000000000000000
+        Size.Height = 198.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        object mmo_WCommentary: TMemo
+          Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+          DataDetectorTypes = []
+          Position.X = 544.000000000000000000
+          Position.Y = 80.000000000000000000
+          Size.Width = 481.000000000000000000
+          Size.Height = 57.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+          Viewport.Width = 477.000000000000000000
+          Viewport.Height = 53.000000000000000000
+        end
+        object lbl_WCommentary: TLabel
+          Position.X = 544.000000000000000000
+          Position.Y = 56.000000000000000000
+          Text = 'Commentary:'
+        end
+        object edt_WCatalog: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 3
+          Position.X = 544.000000000000000000
+          Position.Y = 25.000000000000000000
+          Size.Width = 441.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object lbl_WCatalog: TLabel
+          Position.X = 544.000000000000000000
+          Position.Y = 8.000000000000000000
+          Text = 'Catalog:'
+        end
+        object mmo_WInfo: TMemo
+          Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+          DataDetectorTypes = []
+          Position.X = 14.000000000000000000
+          Position.Y = 32.000000000000000000
+          Size.Width = 515.000000000000000000
+          Size.Height = 57.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          Viewport.Width = 511.000000000000000000
+          Viewport.Height = 53.000000000000000000
+        end
+        object lbl_WInformation: TLabel
+          Position.X = 8.000000000000000000
+          Position.Y = 8.000000000000000000
+          Text = 'User information:'
+        end
+        object dt_WBegin: TDateEdit
+          Date = 43139.000000000000000000
+          Position.X = 16.000000000000000000
+          Position.Y = 136.000000000000000000
+          Size.Width = 225.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 9
+        end
+        object dt_WEnd: TDateEdit
+          Date = 43139.000000000000000000
+          Position.X = 16.000000000000000000
+          Position.Y = 168.000000000000000000
+          Size.Width = 225.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 8
+        end
+        object nmbrbx_WPrice: TNumberBox
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 11
+          Cursor = crIBeam
+          Max = 999999995904.000000000000000000
+          Position.X = 140.000000000000000000
+          Position.Y = 102.000000000000000000
+          VertIncrement = 10.000000000000000000
+          Size.Width = 85.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object lbl_WPrice: TLabel
+          Position.X = 16.000000000000000000
+          Position.Y = 104.000000000000000000
+          Size.Width = 113.000000000000000000
+          Size.Height = 17.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.HorzAlign = Trailing
+          Text = 'Price (from User):'
+        end
+        object nmbrbx_WPaid: TNumberBox
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 10
+          Cursor = crIBeam
+          Max = 999999995904.000000000000000000
+          Position.X = 404.000000000000000000
+          Position.Y = 102.000000000000000000
+          VertIncrement = 10.000000000000000000
+          Size.Width = 85.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object lbl_WPaid: TLabel
+          Position.X = 280.000000000000000000
+          Position.Y = 104.000000000000000000
+          Size.Width = 113.000000000000000000
+          Size.Height = 17.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.HorzAlign = Trailing
+          Text = 'Paid:'
+        end
+        object dt_WPD: TDateEdit
+          Date = 43139.000000000000000000
+          Position.X = 344.000000000000000000
+          Position.Y = 136.000000000000000000
+          Size.Width = 145.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 7
+        end
+        object btn_WSelDir: TButton
+          Position.X = 984.000000000000000000
+          Position.Y = 24.000000000000000000
+          Size.Width = 33.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 12
+          Text = 'Dir'
+          OnClick = btn_WSelDirClick
+        end
+      end
+      object GridWorks: TGrid
+        Align = Client
+        CanFocus = True
+        ClipChildren = True
+        Margins.Left = 4.000000000000000000
+        Margins.Top = 4.000000000000000000
+        Margins.Right = 4.000000000000000000
+        Margins.Bottom = 4.000000000000000000
+        Size.Width = 1023.000000000000000000
+        Size.Height = 412.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        Options = [Editing, ColumnResize, ColumnMove, ColLines, RowLines, RowSelect, Tabs, Header, HeaderClick, AutoDisplacement]
+        Viewport.Width = 1003.000000000000000000
+        Viewport.Height = 371.000000000000000000
+      end
+      object pnl_WorksTop: TPanel
+        Align = Top
+        Size.Width = 1031.000000000000000000
+        Size.Height = 41.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        object Button2: TButton
+          Action = actAddWork
+          Enabled = True
+          ImageIndex = -1
+          Position.X = 16.000000000000000000
+          Position.Y = 8.000000000000000000
+          TabOrder = 0
+          Visible = True
+        end
+        object NavigatorBindSourceDB_works: TBindNavigator
+          Position.X = 120.000000000000000000
+          Position.Y = 8.000000000000000000
+          Size.Width = 240.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 6
+          DataSource = BindSourceDB_works
+          xRadius = 4.000000000000000000
+          yRadius = 4.000000000000000000
+        end
+      end
+    end
+    object tiTasks: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = True
+      Size.Width = 56.000000000000000000
+      Size.Height = 26.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'tiTasks'
+      ExplicitSize.cx = 56.000000000000000000
+      ExplicitSize.cy = 26.000000000000000000
+      object Panel2: TPanel
+        Align = Bottom
+        Position.Y = 440.000000000000000000
+        Size.Width = 1031.000000000000000000
+        Size.Height = 219.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        object mmo_TCommentary: TMemo
+          Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+          DataDetectorTypes = []
+          Position.X = 544.000000000000000000
+          Position.Y = 32.000000000000000000
+          Size.Width = 481.000000000000000000
+          Size.Height = 57.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+          Viewport.Width = 477.000000000000000000
+          Viewport.Height = 53.000000000000000000
+        end
+        object lbl_TCommentary: TLabel
+          Position.X = 536.000000000000000000
+          Position.Y = 8.000000000000000000
+          Text = 'Commentary:'
+        end
+        object lbl_TGraph: TLabel
+          Position.X = 672.000000000000000000
+          Position.Y = 96.000000000000000000
+          Size.Width = 80.000000000000000000
+          Size.Height = 17.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.HorzAlign = Trailing
+          Text = 'GRAPH:'
+        end
+        object mmo_TRemarks: TMemo
+          Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+          DataDetectorTypes = []
+          Position.X = 14.000000000000000000
+          Position.Y = 32.000000000000000000
+          Size.Width = 515.000000000000000000
+          Size.Height = 57.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          Viewport.Width = 511.000000000000000000
+          Viewport.Height = 53.000000000000000000
+        end
+        object lbl_TRemarks: TLabel
+          Position.X = 8.000000000000000000
+          Position.Y = 8.000000000000000000
+          Text = 'User remarks (info)'
+        end
+        object dt_TBegin: TDateEdit
+          Date = 43139.000000000000000000
+          Position.X = 16.000000000000000000
+          Position.Y = 152.000000000000000000
+          Size.Width = 225.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 9
+        end
+        object dt_TEnd: TDateEdit
+          Date = 43139.000000000000000000
+          Position.X = 16.000000000000000000
+          Position.Y = 184.000000000000000000
+          Size.Width = 225.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 8
+        end
+        object img_Graph: TImageControl
+          Tag = 1
+          Position.X = 760.000000000000000000
+          Position.Y = 96.000000000000000000
+          Size.Width = 113.000000000000000000
+          Size.Height = 105.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 11
+          OnLoaded = img_GraphLoaded
+        end
+        object img_TU_Graph: TImageControl
+          Position.X = 544.000000000000000000
+          Position.Y = 96.000000000000000000
+          Size.Width = 113.000000000000000000
+          Size.Height = 105.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 15
+          OnLoaded = img_GraphLoaded
+        end
+        object lbl_TUGraph: TLabel
+          Position.X = 400.000000000000000000
+          Position.Y = 96.000000000000000000
+          Size.Width = 136.000000000000000000
+          Size.Height = 17.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.HorzAlign = Trailing
+          Text = 'U_GRAPH (from user):'
+        end
+        object nmbrbx_TPaid: TNumberBox
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 13
+          Cursor = crIBeam
+          Max = 10000000.000000000000000000
+          Position.X = 380.000000000000000000
+          Position.Y = 118.000000000000000000
+          VertIncrement = 10.000000000000000000
+          Size.Width = 85.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object lbl_TPaid: TLabel
+          Position.X = 256.000000000000000000
+          Position.Y = 120.000000000000000000
+          Size.Width = 113.000000000000000000
+          Size.Height = 17.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.HorzAlign = Trailing
+          Text = 'Paid'
+        end
+        object lbl_TPrice: TLabel
+          Position.X = 24.000000000000000000
+          Position.Y = 120.000000000000000000
+          Size.Width = 113.000000000000000000
+          Size.Height = 17.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.HorzAlign = Trailing
+          Text = 'Price (from User):'
+        end
+        object nmbrbx_TPrice: TNumberBox
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 14
+          Cursor = crIBeam
+          Max = 10000000.000000000000000000
+          Position.X = 148.000000000000000000
+          Position.Y = 118.000000000000000000
+          VertIncrement = 10.000000000000000000
+          Size.Width = 85.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object dt_TPD: TDateEdit
+          Date = 43139.000000000000000000
+          Position.X = 368.000000000000000000
+          Position.Y = 152.000000000000000000
+          Size.Width = 145.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 7
+        end
+        object btn_TClearUGraph: TButton
+          Tag = 1
+          Position.X = 517.000000000000000000
+          Position.Y = 179.000000000000000000
+          Size.Width = 25.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 17
+          Text = 'X'
+          OnClick = btn_TClearUGraphClick
+        end
+        object btn_TClearGraph: TButton
+          Tag = 2
+          Position.X = 733.000000000000000000
+          Position.Y = 179.000000000000000000
+          Size.Width = 25.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 16
+          Text = 'X'
+          OnClick = btn_TClearUGraphClick
+        end
+        object btn_TSelectDir: TButton
+          Tag = 1
+          Position.X = 920.000000000000000000
+          Position.Y = 96.000000000000000000
+          Size.Width = 65.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 12
+          Text = 'Dir'
+          OnClick = btn_WSelDirClick
+        end
+      end
+      object GridTasks: TGrid
+        Align = Client
+        CanFocus = True
+        ClipChildren = True
+        Margins.Left = 4.000000000000000000
+        Margins.Top = 4.000000000000000000
+        Margins.Right = 4.000000000000000000
+        Margins.Bottom = 4.000000000000000000
+        Size.Width = 1023.000000000000000000
+        Size.Height = 391.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        Options = [Editing, ColumnResize, ColumnMove, ColLines, RowLines, RowSelect, Tabs, Header, HeaderClick, AutoDisplacement]
+        Viewport.Width = 1003.000000000000000000
+        Viewport.Height = 350.000000000000000000
+      end
+      object pnl_TasksTop: TPanel
+        Align = Top
+        Size.Width = 1031.000000000000000000
+        Size.Height = 41.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        object Button4: TButton
+          Action = actAddTask
+          Enabled = True
+          ImageIndex = -1
+          Position.X = 16.000000000000000000
+          Position.Y = 8.000000000000000000
+          TabOrder = 0
+          Visible = True
+        end
+        object NavigatorBindSourceDB_tasks: TBindNavigator
+          Position.X = 120.000000000000000000
+          Position.Y = 8.000000000000000000
+          Size.Width = 240.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 5
+          DataSource = BindSourceDB_tasks
+          xRadius = 4.000000000000000000
+          yRadius = 4.000000000000000000
+        end
+      end
+    end
+  end
+  object BindSourceDB_Users: TBindSourceDB
+    DataSet = VD_DM.FDT_Users
+    ScopeMappings = <>
+    Left = 48
+    Top = 80
+  end
+  object BindingsList1: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 12
+    Top = 45
+    object LinkGridToDataSourceBindSourceDB1: TLinkGridToDataSource
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB_Users
+      GridControl = GridUsers
+      Columns = <
+        item
+          MemberName = 'ID'
+        end
+        item
+          MemberName = 'U_DATE'
+        end
+        item
+          MemberName = 'NAME'
+          Width = 250
+        end
+        item
+          MemberName = 'U_INFO'
+          Width = 150
+        end
+        item
+          MemberName = 'CONTACTS'
+          Width = 140
+        end
+        item
+          MemberName = 'CATALOG'
+          Width = 200
+        end
+        item
+          MemberName = 'GROUP_ID'
+        end
+        item
+          MemberName = 'SIGN'
+        end>
+    end
+    object LinkPropertyToFieldLinesText: TLinkPropertyToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB_Users
+      FieldName = 'COMMENTARY'
+      Component = mmo_UComment
+      ComponentProperty = 'Lines.Text'
+    end
+    object LinkControlToField1: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB_Users
+      FieldName = 'U_DATE'
+      Control = dt_User1
+      Track = False
+    end
+    object LinkControlToField2: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB_Users
+      FieldName = 'CONTACTS'
+      Control = edt_UContacts
+      Track = False
+    end
+    object LinkControlToField3: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB_Users
+      FieldName = 'U_INFO'
+      Control = mmo_UserInfo
+      Track = False
+    end
+    object LinkControlToField4: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB_Users
+      FieldName = 'CATALOG'
+      Control = edt_UCatalog
+      Track = False
+    end
+    object LinkGridToDataSourceBindSourceDB12: TLinkGridToDataSource
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB_works
+      GridControl = GridWorks
+      Columns = <
+        item
+          MemberName = 'ID'
+        end
+        item
+          MemberName = 'USER_ID'
+          Width = 60
+        end
+        item
+          MemberName = 'INFO'
+          Width = 260
+        end
+        item
+          MemberName = 'B_DATE'
+          Width = 75
+        end
+        item
+          MemberName = 'E_DATE'
+          Width = 75
+        end
+        item
+          MemberName = 'CATALOG'
+          Width = 120
+        end
+        item
+          MemberName = 'COMMENTARY'
+          Width = 120
+        end
+        item
+          MemberName = 'STATE'
+          Width = 50
+        end
+        item
+          MemberName = 'PRICE'
+        end
+        item
+          MemberName = 'PAID'
+        end
+        item
+          MemberName = 'PD_DATE'
+        end
+        item
+          MemberName = 'SIGN'
+        end>
+    end
+    object LinkControlToField5: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB_works
+      FieldName = 'INFO'
+      Control = mmo_WInfo
+      Track = False
+    end
+    object LinkControlToField6: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB_works
+      FieldName = 'COMMENTARY'
+      Control = mmo_WCommentary
+      Track = False
+    end
+    object LinkControlToField7: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB_works
+      FieldName = 'CATALOG'
+      Control = edt_WCatalog
+      Track = False
+    end
+    object LinkControlToField8: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB_works
+      FieldName = 'B_DATE'
+      Control = dt_WBegin
+      Track = False
+    end
+    object LinkControlToField9: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB_works
+      FieldName = 'E_DATE'
+      Control = dt_WEnd
+      Track = False
+    end
+    object LinkGridToDataSourceBindSourceDB2: TLinkGridToDataSource
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB_tasks
+      GridControl = GridTasks
+      Columns = <
+        item
+          MemberName = 'ID'
+          ReadOnly = True
+        end
+        item
+          MemberName = 'USER_ID'
+          ReadOnly = True
+        end
+        item
+          MemberName = 'WORK_ID'
+        end
+        item
+          MemberName = 'B_DATE'
+          Width = 75
+          ColumnStyle = 'DateColumn'
+        end
+        item
+          MemberName = 'E_DATE'
+          Width = 75
+          ColumnStyle = 'DateColumn'
+        end
+        item
+          MemberName = 'NAME'
+          Width = 260
+        end
+        item
+          MemberName = 'U_REMARKS'
+          Width = 80
+        end
+        item
+          MemberName = 'CATALOG'
+          Width = 150
+        end
+        item
+          MemberName = 'COMMENTARY'
+          Visible = False
+        end
+        item
+          MemberName = 'GROUP_ID'
+        end
+        item
+          MemberName = 'STATE'
+        end
+        item
+          MemberName = 'PRICE'
+          Width = 55
+          ColumnStyle = 'CurrencyColumn'
+        end
+        item
+          MemberName = 'PAID'
+          Width = 55
+          ColumnStyle = 'CurrencyColumn'
+        end
+        item
+          MemberName = 'PD_DATE'
+          ColumnStyle = 'DateColumn'
+        end
+        item
+          MemberName = 'SIGN'
+        end>
+    end
+    object LinkControlToField10: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB_tasks
+      FieldName = 'U_REMARKS'
+      Control = mmo_TRemarks
+      Track = False
+    end
+    object LinkControlToField11: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB_tasks
+      FieldName = 'B_DATE'
+      Control = dt_TBegin
+      Track = False
+    end
+    object LinkControlToField12: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB_tasks
+      FieldName = 'E_DATE'
+      Control = dt_TEnd
+      Track = False
+    end
+    object LinkControlToField13: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB_tasks
+      FieldName = 'COMMENTARY'
+      Control = mmo_TCommentary
+      Track = False
+    end
+    object LinkControlToField14: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB_tasks
+      FieldName = 'GRAPH'
+      Control = img_Graph
+      Track = False
+    end
+    object LinkControlToField15: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB_tasks
+      FieldName = 'U_GRAPH'
+      Control = img_TU_Graph
+      Track = False
+    end
+    object LinkControlToField16: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB_tasks
+      FieldName = 'PRICE'
+      Control = nmbrbx_TPrice
+      Track = False
+    end
+    object LinkControlToField17: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB_tasks
+      FieldName = 'PAID'
+      Control = nmbrbx_TPaid
+      Track = False
+    end
+    object LinkControlToField18: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB_tasks
+      FieldName = 'PD_DATE'
+      Control = dt_TPD
+      Track = False
+    end
+    object LinkControlToField19: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB_works
+      FieldName = 'PRICE'
+      Control = nmbrbx_WPrice
+      Track = False
+    end
+    object LinkControlToField20: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB_works
+      FieldName = 'PAID'
+      Control = nmbrbx_WPaid
+      Track = False
+    end
+    object LinkControlToField21: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB_works
+      FieldName = 'PD_DATE'
+      Control = dt_WPD
+      Track = False
+    end
+  end
+  object BindSourceDB_works: TBindSourceDB
+    DataSet = VD_DM.FDT_works
+    ScopeMappings = <>
+    Left = 232
+    Top = 144
+  end
+  object BindSourceDB_tasks: TBindSourceDB
+    DataSet = VD_DM.FDT_Tasks
+    ScopeMappings = <>
+    Left = 504
+    Top = 312
+  end
+  object aLST: TActionList
+    Left = 521
+    Top = 136
+    object actReopenTables: TAction
+      Text = 'actReopenTables'
+      OnExecute = actReopenTablesExecute
+    end
+    object actAddUser: TAction
+      Text = 'Add User'
+      OnExecute = actAddUserExecute
+    end
+    object actDeleteUser: TAction
+      Text = 'Delete'
+      OnExecute = actDeleteUserExecute
+      OnUpdate = actDeleteUserUpdate
+    end
+    object actAddWork: TAction
+      Text = 'Add work'
+      OnExecute = actAddWorkExecute
+      OnUpdate = actDeleteUserUpdate
+    end
+    object actDeleteWork: TAction
+      Text = 'Delete'
+      OnExecute = actDeleteWorkExecute
+      OnUpdate = actDeleteWorkUpdate
+    end
+    object actAddTask: TAction
+      Text = 'Add Task'
+      OnExecute = actAddTaskExecute
+      OnUpdate = actDeleteWorkUpdate
+    end
+    object actDeleteTask: TAction
+      Text = 'Delete'
+      OnExecute = actDeleteTaskExecute
+      OnUpdate = actDeleteTaskUpdate
+    end
+  end
+end
