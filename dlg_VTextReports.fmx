@@ -1,0 +1,27 @@
+object VTextReportsForm: TVTextReportsForm
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 562
+  ClientWidth = 1027
+  Position = OwnerFormCenter
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object mmoRT: TMemo
+    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+    DataDetectorTypes = []
+    Align = Client
+    Margins.Left = 5.000000000000000000
+    Margins.Top = 5.000000000000000000
+    Margins.Right = 5.000000000000000000
+    Margins.Bottom = 5.000000000000000000
+    Size.Width = 1017.000000000000000000
+    Size.Height = 552.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    Viewport.Width = 1013.000000000000000000
+    Viewport.Height = 548.000000000000000000
+  end
+end

@@ -16,7 +16,8 @@ uses
   u_appParamsFuncs in 'Common\u_appParamsFuncs.pas',
   u_AppLogClass in 'Common\u_AppLogClass.pas',
   dm_VIDir in 'dm_VIDir.pas' {VD_DM: TDataModule},
-  dm_VIReports in 'dm_VIReports.pas' {VRep_DM: TDataModule};
+  dm_VIReports in 'dm_VIReports.pas' {VRep_DM: TDataModule},
+  dlg_VTextReports in 'dlg_VTextReports.pas' {VTextReportsForm};
 
 {$R *.res}
 

@@ -113,6 +113,8 @@ type
     btn_TSelectDir: TButton;
     btn1: TButton;
     btnOpenExp: TButton;
+    btn2: TButton;
+    actTasksReport: TAction;
     procedure FormCreate(Sender: TObject);
     procedure actReopenTablesExecute(Sender: TObject);
     procedure actAddUserExecute(Sender: TObject);
@@ -129,6 +131,7 @@ type
     procedure btn_WSelDirClick(Sender: TObject);
     procedure btn1Click(Sender: TObject);
     procedure btnOpenExpClick(Sender: TObject);
+    procedure actTasksReportExecute(Sender: TObject);
   private
     { Private declarations }
     FDefPath:string;
@@ -150,7 +153,8 @@ uses DateUtils,
      FMX.Platform.Win,
      ShellApi,
      {$ENDIF}
-     dm_VIReports;
+     dm_VIReports,
+     dlg_VTextReports;
 
 
 procedure SelectFileInExplorer(const a_Fn: string);
@@ -253,6 +257,11 @@ procedure TVIDirectForm.actReopenTablesExecute(Sender: TObject);
 begin
   VD_DM.conLite.Connected:=false;
   VD_DM.ConnectTobase;
+end;
+
+procedure TVIDirectForm.actTasksReportExecute(Sender: TObject);
+begin
+  if SM_VTextReportsDlg(0,Self) then ;
 end;
 
 procedure TVIDirectForm.btn_WSelDirClick(Sender: TObject);

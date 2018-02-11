@@ -61,6 +61,7 @@ type
   public
     { Public declarations }
     function ConnectTobase:boolean;
+    function PrepareTasksReport(arg:integer; const aRList:TStrings):Boolean;
   end;
 
 var
@@ -75,12 +76,104 @@ implementation
 function TVD_DM.ConnectTobase: boolean;
 begin
   Result:=false;
+  //
+  conLite.Params.Database:='../../Resource/dataLite.sdb';
+
    conLite.Connected:=true;
   ///
   FDT_Users.Active:=true;
   FDT_works.Active:=true;
   FDT_Tasks.Active:=true;
   Result:=true;
+end;
+
+
+function Get_StateDesc(aState:Integer):string;
+ begin
+   case aState of
+    0: Result:='Оговорена';
+    1: Result:='В работе';
+    2: Result:='Отменена';
+    3: Result:='Выполнена';
+    4: Result:='Закрыта с оплатой';
+    else Result:=IntToStr(aState);
+   end;
+ end;
+
+function TVD_DM.PrepareTasksReport(arg: integer;
+  const aRList: TStrings): Boolean;
+ var LPrice,LPaid:Integer;
+     L_CurrDate:TDateTime;
+     L_State:integer;
+     i,LK:Integer;
+    LS,LS1:string;
+begin
+  L_CurrDate:=Now;
+  FDT_Tasks.DisableControls;
+  try
+   LPrice:=0; LPaid:=0;
+   ///
+   aRList.Add(Concat('       Отчет по работам от '+DateTimeToStr(L_CurrDate)));
+   aRList.Add(Concat('Заказчик: ',FDT_Users.FieldByName('NAME').AsWideString));
+   aRList.Add(Concat('Задание: ',FDT_works.FieldByName('INFO').AsWideString));
+   aRList.Add(Concat('Сроки: от ',DateToStr(FDT_works.FieldByName('B_DATE').AsDateTime)));
+   aRList.Add('---');
+   ///
+   FDT_Tasks.First;
+   i:=1;
+   while not(FDT_Tasks.Eof) do
+   with FDT_Tasks do
+    begin
+      if i=1 then
+         aRList.Add('Перечень работ: ');
+      L_State:=1;
+      if FieldByName('E_DATE').AsDateTime<=L_CurrDate then
+        begin
+          L_State:=3;
+          LPrice:=LPrice+FieldByName('PRICE').AsInteger;
+          if FieldByName('PAID').AsInteger>=FieldByName('PRICE').AsInteger then
+             L_State:=4;
+        end;
+      LPaid:=LPaid+FieldByName('PAID').AsInteger;
+      if (FieldByName('STATE').IsNull) or (FieldByName('STATE').AsInteger<10) then
+        begin
+         FDT_Tasks.Edit;
+         FDT_Tasks.FieldByName('STATE').AsInteger:=L_State;
+         FDT_Tasks.Post;
+        end;
+      ///
+      if (FieldByName('U_REMARKS').IsNull=false) then
+         LS:=' ('+FieldByName('U_REMARKS').AsWideString+')'
+      else LS:='';
+      if (FieldByName('PAID').AsInteger>0) and (FieldByName('PD_DATE').IsNull=False) then
+         LS1:=' Дата оплаты: '+DateToStr(FieldByName('PD_DATE').AsDateTime)
+      else LS1:='';
+      aRList.Add(Concat(' ',IntToStr(i),'. ',FieldByName('NAME').AsWideString,' Сроки: от ',
+                DateToStr(FieldByName('B_DATE').AsDateTime),' по ',
+                DateToStr(FieldByName('E_DATE').AsDateTime),
+                LS));
+      aRList.Add(Concat(' ','   ','<<',Get_StateDesc(L_State),'>>',' стоимость:',
+               IntToStr(FieldByName('PRICE').AsInteger),'  руб., оплачено: ',
+               IntToStr(FieldByName('PAID').AsInteger),'  руб.',
+               LS1));
+     // aRList.Add('-*-');
+      ///
+      FDT_Tasks.Next;
+      Inc(i);
+    end;
+   aRList.Add(' Итого, по выполненным работам:');
+   if LPrice>Lpaid then
+      LK:=LPrice-Lpaid
+   else LK:=0;
+   aRList.Add(Format('стоимость: %d руб., оплачено: %d руб.  К ОПЛАТЕ: %d руб.',
+                    [LPrice,LPaid,LK]));
+   if LK=0 then
+      aRList.Add('Задание закрыто!');
+   ///
+   ///
+  finally
+    FDT_Tasks.EnableControls;
+  end;
 end;
 
 end.

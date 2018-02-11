@@ -599,11 +599,23 @@ object VIDirectForm: TVIDirectForm
           yRadius = 4.000000000000000000
         end
         object btn1: TButton
-          Position.X = 496.000000000000000000
+          Position.X = 640.000000000000000000
           Position.Y = 8.000000000000000000
           TabOrder = 6
           Text = 'btn1'
           OnClick = btn1Click
+        end
+        object btn2: TButton
+          Action = actTasksReport
+          Enabled = True
+          ImageIndex = -1
+          Position.X = 376.000000000000000000
+          Position.Y = 8.000000000000000000
+          Size.Width = 97.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 8
+          Visible = True
         end
       end
     end
@@ -970,6 +982,10 @@ object VIDirectForm: TVIDirectForm
       Text = 'Delete'
       OnExecute = actDeleteTaskExecute
       OnUpdate = actDeleteTaskUpdate
+    end
+    object actTasksReport: TAction
+      Text = 'Report'
+      OnExecute = actTasksReportExecute
     end
   end
 end
