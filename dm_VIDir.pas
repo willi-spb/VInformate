@@ -130,10 +130,10 @@ begin
       if FieldByName('E_DATE').AsDateTime<=L_CurrDate then
         begin
           L_State:=3;
-          LPrice:=LPrice+FieldByName('PRICE').AsInteger;
           if FieldByName('PAID').AsInteger>=FieldByName('PRICE').AsInteger then
              L_State:=4;
-        end;
+       end;
+      LPrice:=LPrice+FieldByName('PRICE').AsInteger;
       LPaid:=LPaid+FieldByName('PAID').AsInteger;
       if (FieldByName('STATE').IsNull) or (FieldByName('STATE').AsInteger<10) then
         begin
