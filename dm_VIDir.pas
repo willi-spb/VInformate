@@ -105,7 +105,7 @@ function TVD_DM.PrepareTasksReport(arg: integer;
  var LPrice,LPaid:Integer;
      L_CurrDate:TDateTime;
      L_State:integer;
-     i,LK:Integer;
+     i,LK,jj,kk:Integer;
     LS,LS1:string;
 begin
   L_CurrDate:=Now;
@@ -120,7 +120,7 @@ begin
    aRList.Add('---');
    ///
    FDT_Tasks.First;
-   i:=1;
+   i:=1;  jj:=0; kk:=0;
    while not(FDT_Tasks.Eof) do
    with FDT_Tasks do
     begin
@@ -139,6 +139,10 @@ begin
         begin
          FDT_Tasks.Edit;
          FDT_Tasks.FieldByName('STATE').AsInteger:=L_State;
+         if L_State=3 then
+            Inc(jj);
+         if L_State=4 then
+            Inc(kk);
          FDT_Tasks.Post;
         end;
       ///
@@ -152,23 +156,31 @@ begin
                 DateToStr(FieldByName('B_DATE').AsDateTime),' по ',
                 DateToStr(FieldByName('E_DATE').AsDateTime),
                 LS));
-      aRList.Add(Concat(' ','   ','<<',Get_StateDesc(L_State),'>>',' стоимость:',
-               IntToStr(FieldByName('PRICE').AsInteger),'  руб., оплачено: ',
-               IntToStr(FieldByName('PAID').AsInteger),'  руб.',
-               LS1));
+      if arg>=1 then
+        aRList.Add(Concat(' ','   ','<<',Get_StateDesc(L_State),'>>',' стоимость:',
+                 IntToStr(FieldByName('PRICE').AsInteger),'  руб., оплачено: ',
+                 IntToStr(FieldByName('PAID').AsInteger),'  руб.',
+                 LS1))
+      else
+       aRList.Add(Concat(' ','   ','<<',Get_StateDesc(L_State),'>>'));
      // aRList.Add('-*-');
       ///
       FDT_Tasks.Next;
       Inc(i);
     end;
-   aRList.Add(' Итого, по выполненным работам:');
-   if LPrice>Lpaid then
-      LK:=LPrice-Lpaid
-   else LK:=0;
-   aRList.Add(Format('стоимость: %d руб., оплачено: %d руб.  К ОПЛАТЕ: %d руб.',
+   if i>0 then Dec(i);
+   aRList.Add(Format(' Описано заданий: %d, из них выполнено: %d, закрыто: %d',[i,jj,kk]));
+   if arg>=1 then
+    begin
+     aRList.Add(' Итого, по выполненным заданиям:');
+     if LPrice>Lpaid then
+        LK:=LPrice-Lpaid
+      else LK:=0;
+      aRList.Add(Format('стоимость: %d руб., оплачено: %d руб.  К ОПЛАТЕ: %d руб.',
                     [LPrice,LPaid,LK]));
-   if LK=0 then
-      aRList.Add('Задание закрыто!');
+      if LK=0 then
+        aRList.Add('Задание закрыто!');
+    end;
    ///
    ///
   finally

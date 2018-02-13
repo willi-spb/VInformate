@@ -617,6 +617,16 @@ object VIDirectForm: TVIDirectForm
           TabOrder = 8
           Visible = True
         end
+        object chk_TReport: TCheckBox
+          IsChecked = True
+          Position.X = 480.000000000000000000
+          Position.Y = 8.000000000000000000
+          Size.Width = 81.000000000000000000
+          Size.Height = 19.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 9
+          Text = 'Price_Paid'
+        end
       end
     end
   end

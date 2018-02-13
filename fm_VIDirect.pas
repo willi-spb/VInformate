@@ -115,6 +115,7 @@ type
     btnOpenExp: TButton;
     btn2: TButton;
     actTasksReport: TAction;
+    chk_TReport: TCheckBox;
     procedure FormCreate(Sender: TObject);
     procedure actReopenTablesExecute(Sender: TObject);
     procedure actAddUserExecute(Sender: TObject);
@@ -260,8 +261,11 @@ begin
 end;
 
 procedure TVIDirectForm.actTasksReportExecute(Sender: TObject);
+var i:Integer;
 begin
-  if SM_VTextReportsDlg(0,Self) then ;
+  if chk_TReport.IsChecked=true then i:=1
+  else i:=0;
+  if SM_VTextReportsDlg(i,Self) then ;
 end;
 
 procedure TVIDirectForm.btn_WSelDirClick(Sender: TObject);

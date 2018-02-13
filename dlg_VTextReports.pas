@@ -34,7 +34,7 @@ function SM_VTextReportsDlg(rg:Integer; AOwner:TComponent):Boolean;
    with TVTextReportsForm.Create(Aowner) do
    try
      mmoRT.Lines.Clear;
-     VD_DM.PrepareTasksReport(0,mmoRT.Lines);
+     VD_DM.PrepareTasksReport(rg,mmoRT.Lines);
      Result:=ShowModal=mrOk;
    finally
      Free;
