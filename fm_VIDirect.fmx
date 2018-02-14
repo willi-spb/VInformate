@@ -8,6 +8,7 @@ object VIDirectForm: TVIDirectForm
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
   OnCreate = FormCreate
+  OnClose = FormClose
   DesignerMasterStyle = 0
   object tbc_D: TTabControl
     Align = Client

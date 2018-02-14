@@ -133,11 +133,14 @@ type
     procedure btn1Click(Sender: TObject);
     procedure btnOpenExpClick(Sender: TObject);
     procedure actTasksReportExecute(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
     FDefPath:string;
   public
     { Public declarations }
+    function LocateFromIni(aLocRg:integer):Boolean;
+    function SaveToIni:Boolean;
     function ClearBlobData(const ADS:TDataset; const aFieldName:string):boolean;
     function FillCatalogData(const ADS:TDataset; const aFieldName:string):boolean;
   end;
@@ -149,7 +152,8 @@ implementation
 
 {$R *.fmx}
 
-uses DateUtils,
+uses wAppEnviron,
+     DateUtils,
      {$IFDEF MSWINDOWS}
      FMX.Platform.Win,
      ShellApi,
@@ -335,10 +339,16 @@ begin
      end;
 end;
 
+procedure TVIDirectForm.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  SaveToIni;
+end;
+
 procedure TVIDirectForm.FormCreate(Sender: TObject);
 begin
   actReopenTables.Execute;
   FDefPath:=IncludeTrailingPathDelimiter(GetCurrentDir);
+  LocateFromIni(0);
 end;
 
 procedure TVIDirectForm.img_GraphLoaded(Sender: TObject;
@@ -361,6 +371,40 @@ begin
     LS.Free;
     VD_DM.FDT_Tasks.Post;
   end;
+end;
+
+function TVIDirectForm.LocateFromIni(aLocRg: integer): Boolean;
+var L_UserID,L_WorkID,L_TaskID:integer;
+begin
+ L_UserID:=appEnv.Ini.ReadInteger('BDATA','USER_ID',0);
+ L_WorkID:=appEnv.Ini.ReadInteger('BDATA','WORK_ID',0);
+ L_TaskID:=appEnv.Ini.ReadInteger('BDATA','TASK_ID',0);
+ Result:=false;
+ if L_UserID>0 then
+    Result:=VD_DM.FDT_Users.Locate('ID',L_UserID,[]);
+ if L_WorkID>0 then
+    Result:=(VD_DM.FDT_works.Locate('USER_ID;ID',VarArrayOf([L_UserID,L_WorkID]),[])) and (Result=true);
+  if L_TaskID>0 then
+    Result:=(VD_DM.FDT_Tasks.Locate('USER_ID;WORK_ID;ID',VarArrayOf([L_UserID,L_WorkID,L_TaskID]),[])) and (Result=true);
+end;
+
+function TVIDirectForm.SaveToIni: Boolean;
+var L_UserID,L_WorkID,L_TaskID:integer;
+begin
+ if VD_DM.FDT_Users.FieldByName('ID').IsNull then
+    L_UserID:=0
+ else L_UserID:=VD_DM.FDT_Users.FieldByName('ID').AsInteger;
+ if VD_DM.FDT_works.FieldByName('ID').IsNull then
+    L_WorkID:=0
+ else L_WorkID:=VD_DM.FDT_works.FieldByName('ID').AsInteger;
+ if VD_DM.FDT_Tasks.FieldByName('ID').IsNull then
+    L_TaskID:=0
+ else L_TaskID:=VD_DM.FDT_Tasks.FieldByName('ID').AsInteger;
+ appEnv.Ini.WriteInteger('BDATA','USER_ID',L_UserID);
+ appEnv.Ini.WriteInteger('BDATA','WORK_ID',L_WorkID);
+ appEnv.Ini.WriteInteger('BDATA','TASK_ID',L_TaskID);
+ ///
+ Result:=appEnv.Ini.Save;
 end;
 
 end.
