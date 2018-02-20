@@ -212,7 +212,6 @@ end;
 
 procedure TVIDirectForm.actAddWorkExecute(Sender: TObject);
 begin
-// default adding record
  with VD_DM.FDT_works do
    begin
      Append;
