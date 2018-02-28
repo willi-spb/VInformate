@@ -349,7 +349,6 @@ begin
   actReopenTables.Execute;
   FDefPath:=IncludeTrailingPathDelimiter(GetCurrentDir);
   LocateFromIni(0);
-  ///
 end;
 
 procedure TVIDirectForm.img_GraphLoaded(Sender: TObject;
