@@ -58,6 +58,16 @@ type
     FDT_TasksPD_DATE: TDateTimeField;
     conImages: TFDConnection;
     FDQ_Images: TFDQuery;
+    FDT_Images: TFDTable;
+    FDT_ImagesID: TFDAutoIncField;
+    FDT_ImagesITYPE: TIntegerField;
+    FDT_ImagesGROUP_ID: TIntegerField;
+    FDT_ImagesTASK_ID: TIntegerField;
+    FDT_ImagesUSER_ID: TIntegerField;
+    FDT_ImagesIMG: TBlobField;
+    FDT_ImagesIDESC: TWideMemoField;
+    FDT_ImagesCDATE: TDateTimeField;
+    FDT_ImagesSIGN: TIntegerField;
   private
     { Private declarations }
   public
@@ -89,6 +99,9 @@ begin
   FDT_Users.Active:=true;
   FDT_works.Active:=true;
   FDT_Tasks.Active:=true;
+  ///
+  FDT_Images.Active:=true;
+  ///
   Result:=true;
 end;
 

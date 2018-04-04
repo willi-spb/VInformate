@@ -116,6 +116,10 @@ type
     btn2: TButton;
     actTasksReport: TAction;
     chk_TReport: TCheckBox;
+    pnl1: TPanel;
+    Grid1: TGrid;
+    BindSourceDB1: TBindSourceDB;
+    LinkGridToDataSourceBindSourceDB13: TLinkGridToDataSource;
     procedure FormCreate(Sender: TObject);
     procedure actReopenTablesExecute(Sender: TObject);
     procedure actAddUserExecute(Sender: TObject);
@@ -262,6 +266,7 @@ end;
 procedure TVIDirectForm.actReopenTablesExecute(Sender: TObject);
 begin
   VD_DM.conLite.Connected:=false;
+  VD_DM.conImages.Connected:=false;
   VD_DM.ConnectTobase;
 end;
 

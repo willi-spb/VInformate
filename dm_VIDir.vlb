@@ -11,13 +11,13 @@ Coordinates=40,196,50,33
 Coordinates=29,288,79,33
 
 [FDT_Tasks]
-Coordinates=10,10,80,303
+Coordinates=10,10,80,357
 
 [FDT_UsersGROUP_ID]
 Coordinates=380,157,122,33
 
 [FDT_works]
-Coordinates=190,10,80,213
+Coordinates=190,10,80,267
 
 [FDT_UsersCONTACTS]
 Coordinates=380,261,125,33
@@ -114,4 +114,58 @@ Coordinates=109,242,57,33
 
 [FDT_worksUSER_ID]
 Coordinates=199,224,114,33
+
+[conImages]
+Coordinates=231,437,68,33
+
+[FDT_TasksPD_DATE]
+Coordinates=393,417,117,33
+
+[FDQ_Images]
+Coordinates=20,386,77,51
+
+[FDT_worksPAID]
+Coordinates=355,469,94,33
+
+[FDT_TasksPRICE]
+Coordinates=393,521,100,33
+
+[FDT_TasksPAID]
+Coordinates=295,547,93,33
+
+[FDT_worksPRICE]
+Coordinates=186,547,101,33
+
+[FDT_worksPD_DATE]
+Coordinates=67,547,117,33
+
+[FDT_Images]
+Coordinates=231,489,75,213
+
+[FDT_ImagesGROUP_ID]
+Coordinates=199,296,129,33
+
+[FDT_ImagesUSER_ID]
+Coordinates=199,348,120,33
+
+[FDT_ImagesIDESC]
+Coordinates=180,386,107,33
+
+[FDT_ImagesTASK_ID]
+Coordinates=366,1,119,33
+
+[FDT_ImagesSIGN]
+Coordinates=366,53,100,33
+
+[FDT_ImagesITYPE]
+Coordinates=366,105,105,33
+
+[FDT_ImagesID]
+Coordinates=109,296,85,33
+
+[FDT_ImagesIMG]
+Coordinates=366,157,95,33
+
+[FDT_ImagesCDATE]
+Coordinates=366,209,111,33
 

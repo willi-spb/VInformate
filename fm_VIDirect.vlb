@@ -14,7 +14,7 @@ Coordinates=180,10,135,33
 Visible=False
 
 []
-Coordinates=455,71,59,58
+Coordinates=300,1,58,33
 Visible=True
 
 [BindingsList1]
@@ -116,7 +116,7 @@ LayerNames=NewLayer0
 Coordinates=48,159,47,33
 
 [GridTasks]
-Coordinates=650,410,64,357
+Coordinates=650,410,64,321
 Visible=True
 
 [lbl_TRemarks]
@@ -216,7 +216,7 @@ Coordinates=452,869,83,33
 Coordinates=310,180,53,51
 
 [BindSourceDB_tasks]
-Coordinates=360,420,119,537
+Coordinates=360,420,119,501
 
 [BindSourceDB_works]
 Coordinates=1040,480,122,429
@@ -258,4 +258,57 @@ Coordinates=730,1050,115,51
 
 [nmbrbx_WPrice]
 Coordinates=900,800,92,51
+
+[actTasksReport]
+Coordinates=459,78,91,33
+
+[btn_TClearGraph]
+Coordinates=51,78,98,51
+
+[btn_TSelectDir]
+Coordinates=0,313,87,51
+
+[chk_TReport]
+Coordinates=534,417,77,51
+
+[btn_TClearUGraph]
+Coordinates=475,1,105,51
+
+[btnOpenExp]
+Coordinates=534,494,75,51
+
+[VD_DM.FDQ_Images]
+Coordinates=1400,40,116,33
+Visible=False
+
+[btn1]
+Coordinates=315,410,40,51
+
+[btn_WSelDir]
+Coordinates=0,0,75,51
+
+[btn2]
+Coordinates=101,275,40,51
+
+[pnl1]
+Coordinates=1260,40,40,33
+
+[Grid1]
+Coordinates=1290,140,41,51
+Visible=True
+
+[BindSourceDB1]
+Coordinates=1400,40,106,69
+
+[VD_DM.FDT_Images]
+Coordinates=777,267,114,51
+
+[NavigatorBindSourceDB_works]
+Coordinates=759,190,170,51
+
+[NavigatorBindSourceDB_tasks]
+Coordinates=759,499,166,51
+
+[NavigatorBindSourceDB_Users]
+Coordinates=94,1,168,51
 

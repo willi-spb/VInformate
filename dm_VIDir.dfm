@@ -232,8 +232,9 @@ object VD_DM: TVD_DM
   end
   object conImages: TFDConnection
     Params.Strings = (
-      'Database=D:\Execute\Work_temp\VInformate\Resource\dataLite.sdb'
+      'Database=D:\Execute\Work_temp\VInformate\Resource\imagesLite.sdb'
       'DriverID=SQLite')
+    Connected = True
     LoginPrompt = False
     Left = 72
     Top = 224
@@ -242,5 +243,54 @@ object VD_DM: TVD_DM
     Connection = conImages
     Left = 152
     Top = 256
+  end
+  object FDT_Images: TFDTable
+    IndexFieldNames = 'ID'
+    Connection = conImages
+    UpdateOptions.UpdateTableName = 'images_t'
+    TableName = 'images_t'
+    Left = 232
+    Top = 232
+    object FDT_ImagesID: TFDAutoIncField
+      FieldName = 'ID'
+      Origin = 'ID'
+      ProviderFlags = [pfInWhere, pfInKey]
+    end
+    object FDT_ImagesITYPE: TIntegerField
+      FieldName = 'ITYPE'
+      Origin = 'ITYPE'
+      Required = True
+    end
+    object FDT_ImagesGROUP_ID: TIntegerField
+      FieldName = 'GROUP_ID'
+      Origin = 'GROUP_ID'
+      Required = True
+    end
+    object FDT_ImagesTASK_ID: TIntegerField
+      FieldName = 'TASK_ID'
+      Origin = 'TASK_ID'
+    end
+    object FDT_ImagesUSER_ID: TIntegerField
+      FieldName = 'USER_ID'
+      Origin = 'USER_ID'
+    end
+    object FDT_ImagesIMG: TBlobField
+      FieldName = 'IMG'
+      Origin = 'IMG'
+    end
+    object FDT_ImagesIDESC: TWideMemoField
+      FieldName = 'IDESC'
+      Origin = 'IDESC'
+      BlobType = ftWideMemo
+    end
+    object FDT_ImagesCDATE: TDateTimeField
+      FieldName = 'CDATE'
+      Origin = 'CDATE'
+    end
+    object FDT_ImagesSIGN: TIntegerField
+      FieldName = 'SIGN'
+      Origin = 'SIGN'
+      Required = True
+    end
   end
 end

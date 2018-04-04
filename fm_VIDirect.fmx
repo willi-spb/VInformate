@@ -51,8 +51,8 @@ object VIDirectForm: TVIDirectForm
         Size.PlatformDefault = False
         TabOrder = 0
         Options = [Editing, ColumnResize, ColumnMove, ColLines, RowLines, RowSelect, Tabs, Header, HeaderClick, AutoDisplacement]
-        Viewport.Width = 1023.000000000000000000
-        Viewport.Height = 412.000000000000000000
+        Viewport.Width = 1003.000000000000000000
+        Viewport.Height = 387.000000000000000000
       end
       object pnl_UData: TPanel
         Align = Bottom
@@ -70,8 +70,8 @@ object VIDirectForm: TVIDirectForm
           Size.Height = 57.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 1
-          Viewport.Width = 481.000000000000000000
-          Viewport.Height = 57.000000000000000000
+          Viewport.Width = 477.000000000000000000
+          Viewport.Height = 53.000000000000000000
         end
         object lbl_Desc_UComment: TLabel
           Position.X = 544.000000000000000000
@@ -115,8 +115,8 @@ object VIDirectForm: TVIDirectForm
           Size.Height = 57.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 0
-          Viewport.Width = 515.000000000000000000
-          Viewport.Height = 57.000000000000000000
+          Viewport.Width = 511.000000000000000000
+          Viewport.Height = 53.000000000000000000
         end
         object lbl_UInfo: TLabel
           Position.X = 16.000000000000000000
@@ -190,8 +190,8 @@ object VIDirectForm: TVIDirectForm
           Size.Height = 57.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 1
-          Viewport.Width = 481.000000000000000000
-          Viewport.Height = 57.000000000000000000
+          Viewport.Width = 477.000000000000000000
+          Viewport.Height = 53.000000000000000000
         end
         object lbl_WCommentary: TLabel
           Position.X = 544.000000000000000000
@@ -221,8 +221,8 @@ object VIDirectForm: TVIDirectForm
           Size.Height = 57.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 0
-          Viewport.Width = 515.000000000000000000
-          Viewport.Height = 57.000000000000000000
+          Viewport.Width = 511.000000000000000000
+          Viewport.Height = 53.000000000000000000
         end
         object lbl_WInformation: TLabel
           Position.X = 8.000000000000000000
@@ -322,8 +322,8 @@ object VIDirectForm: TVIDirectForm
         Size.PlatformDefault = False
         TabOrder = 0
         Options = [Editing, ColumnResize, ColumnMove, ColLines, RowLines, RowSelect, Tabs, Header, HeaderClick, AutoDisplacement]
-        Viewport.Width = 1023.000000000000000000
-        Viewport.Height = 412.000000000000000000
+        Viewport.Width = 1003.000000000000000000
+        Viewport.Height = 371.000000000000000000
       end
       object pnl_WorksTop: TPanel
         Align = Top
@@ -627,6 +627,26 @@ object VIDirectForm: TVIDirectForm
           Size.PlatformDefault = False
           TabOrder = 9
           Text = 'Price_Paid'
+        end
+      end
+      object pnl1: TPanel
+        Position.X = 568.000000000000000000
+        Position.Y = 102.000000000000000000
+        Size.Width = 329.000000000000000000
+        Size.Height = 267.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 3
+        object Grid1: TGrid
+          CanFocus = True
+          ClipChildren = True
+          Position.X = 16.000000000000000000
+          Position.Y = 24.000000000000000000
+          Size.Width = 297.000000000000000000
+          Size.Height = 100.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          Viewport.Width = 293.000000000000000000
+          Viewport.Height = 75.000000000000000000
         end
       end
     end
@@ -945,6 +965,12 @@ object VIDirectForm: TVIDirectForm
       Control = dt_WPD
       Track = False
     end
+    object LinkGridToDataSourceBindSourceDB13: TLinkGridToDataSource
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      GridControl = Grid1
+      Columns = <>
+    end
   end
   object BindSourceDB_works: TBindSourceDB
     DataSet = VD_DM.FDT_works
@@ -998,5 +1024,11 @@ object VIDirectForm: TVIDirectForm
       Text = 'Report'
       OnExecute = actTasksReportExecute
     end
+  end
+  object BindSourceDB1: TBindSourceDB
+    DataSet = VD_DM.FDQ_Images
+    ScopeMappings = <>
+    Left = 504
+    Top = 328
   end
 end
