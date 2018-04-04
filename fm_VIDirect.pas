@@ -159,6 +159,7 @@ uses wAppEnviron,
      ShellApi,
      {$ENDIF}
      dm_VIReports,
+     fm_Image,
      dlg_VTextReports;
 
 
@@ -282,7 +283,9 @@ end;
 
 procedure TVIDirectForm.btn1Click(Sender: TObject);
 begin
-  VRep_DM.GenerateTaskList(0);
+ // VRep_DM.GenerateTaskList(0);
+ SM_ImageDlg(Self,5,0,VD_DM.FDT_Tasks.FieldByName('USER_ID').AsInteger,
+                      VD_DM.FDT_Tasks.FieldByName('USER_ID').AsInteger,1);
 end;
 
 procedure TVIDirectForm.btnOpenExpClick(Sender: TObject);

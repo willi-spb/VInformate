@@ -17,7 +17,8 @@ uses
   u_AppLogClass in 'Common\u_AppLogClass.pas',
   dm_VIDir in 'dm_VIDir.pas' {VD_DM: TDataModule},
   dm_VIReports in 'dm_VIReports.pas' {VRep_DM: TDataModule},
-  dlg_VTextReports in 'dlg_VTextReports.pas' {VTextReportsForm};
+  dlg_VTextReports in 'dlg_VTextReports.pas' {VTextReportsForm},
+  fm_Image in 'fm_Image.pas' {ImageForm};
 
 {$R *.res}
 
@@ -67,6 +68,7 @@ begin
       Application.CreateForm(TVD_DM, VD_DM);
   Application.CreateForm(TVIDirectForm, VIDirectForm);
   Application.CreateForm(TVRep_DM, VRep_DM);
+  Application.CreateForm(TImageForm, ImageForm);
   Application.Run;
      end;
   finally

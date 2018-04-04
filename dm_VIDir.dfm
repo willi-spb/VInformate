@@ -1,6 +1,6 @@
 object VD_DM: TVD_DM
   OldCreateOrder = False
-  Height = 252
+  Height = 367
   Width = 831
   object conLite: TFDConnection
     Params.Strings = (
@@ -229,5 +229,18 @@ object VD_DM: TVD_DM
     DataSet = FDT_works
     Left = 136
     Top = 144
+  end
+  object conImages: TFDConnection
+    Params.Strings = (
+      'Database=D:\Execute\Work_temp\VInformate\Resource\dataLite.sdb'
+      'DriverID=SQLite')
+    LoginPrompt = False
+    Left = 72
+    Top = 224
+  end
+  object FDQ_Images: TFDQuery
+    Connection = conImages
+    Left = 152
+    Top = 256
   end
 end

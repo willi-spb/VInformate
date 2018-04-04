@@ -1,0 +1,93 @@
+object ImageForm: TImageForm
+  Left = 0
+  Top = 0
+  Caption = 'Image information'
+  ClientHeight = 459
+  ClientWidth = 597
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  DesignerMasterStyle = 0
+  object img_TU_Graph: TImageControl
+    Anchors = [akLeft, akTop, akRight, akBottom]
+    Position.X = 12.000000000000000000
+    Position.Y = 104.000000000000000000
+    Size.Width = 573.000000000000000000
+    Size.Height = 301.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 14
+    OnLoaded = img_TU_GraphLoaded
+  end
+  object mmo_IDESC: TMemo
+    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+    DataDetectorTypes = []
+    Anchors = [akLeft, akTop, akRight]
+    Position.X = 48.000000000000000000
+    Position.Y = 8.000000000000000000
+    Size.Width = 537.000000000000000000
+    Size.Height = 49.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 16
+    Viewport.Width = 533.000000000000000000
+    Viewport.Height = 45.000000000000000000
+  end
+  object nmbrbx_ImgGroup: TNumberBox
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 11
+    Cursor = crIBeam
+    Max = 999999995904.000000000000000000
+    Position.X = 300.000000000000000000
+    Position.Y = 70.000000000000000000
+    VertIncrement = 10.000000000000000000
+    Size.Width = 37.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object lbl_ImgGroup: TLabel
+    Position.X = 176.000000000000000000
+    Position.Y = 72.000000000000000000
+    Size.Width = 113.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.HorzAlign = Trailing
+    Text = 'Graphic group:'
+  end
+  object dt_ImageAdd: TDateEdit
+    Date = 43139.000000000000000000
+    Position.X = 368.000000000000000000
+    Position.Y = 71.000000000000000000
+    Size.Width = 145.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 7
+  end
+  object pnl_IMGBottom: TPanel
+    Align = Bottom
+    Margins.Left = 3.000000000000000000
+    Margins.Top = 3.000000000000000000
+    Margins.Right = 3.000000000000000000
+    Margins.Bottom = 3.000000000000000000
+    Position.X = 3.000000000000000000
+    Position.Y = 409.000000000000000000
+    Size.Width = 591.000000000000000000
+    Size.Height = 47.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 18
+    object btnOk: TButton
+      Position.X = 384.000000000000000000
+      Position.Y = 16.000000000000000000
+      TabOrder = 0
+      Text = 'OK'
+      OnClick = btnOkClick
+    end
+    object btnCancel: TButton
+      ModalResult = 2
+      Position.X = 496.000000000000000000
+      Position.Y = 16.000000000000000000
+      TabOrder = 1
+      Text = 'Cancel'
+    end
+  end
+end

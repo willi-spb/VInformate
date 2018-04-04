@@ -56,6 +56,8 @@ type
     FDT_TasksPAID: TIntegerField;
     FDT_worksPD_DATE: TDateTimeField;
     FDT_TasksPD_DATE: TDateTimeField;
+    conImages: TFDConnection;
+    FDQ_Images: TFDQuery;
   private
     { Private declarations }
   public
@@ -78,8 +80,11 @@ begin
   Result:=false;
   //
   conLite.Params.Database:='../../Resource/dataLite.sdb';
-
    conLite.Connected:=true;
+  ///
+  ///
+  conImages.Params.Database:='../../Resource/imagesLite.sdb';
+  conImages.Connected:=true;
   ///
   FDT_Users.Active:=true;
   FDT_works.Active:=true;
