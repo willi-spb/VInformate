@@ -234,7 +234,6 @@ object VD_DM: TVD_DM
     Params.Strings = (
       'Database=D:\Execute\Work_temp\VInformate\Resource\imagesLite.sdb'
       'DriverID=SQLite')
-    Connected = True
     LoginPrompt = False
     Left = 72
     Top = 224
@@ -255,6 +254,7 @@ object VD_DM: TVD_DM
       FieldName = 'ID'
       Origin = 'ID'
       ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = True
     end
     object FDT_ImagesITYPE: TIntegerField
       FieldName = 'ITYPE'
@@ -292,5 +292,10 @@ object VD_DM: TVD_DM
       Origin = 'SIGN'
       Required = True
     end
+  end
+  object ds_Images: TDataSource
+    DataSet = FDT_Images
+    Left = 248
+    Top = 288
   end
 end

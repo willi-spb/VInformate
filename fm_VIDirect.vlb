@@ -1,5 +1,5 @@
 ﻿[tbc_D]
-Coordinates=90,540,42,33
+Coordinates=90,540,48,36
 
 [DataModule1.FDT_Tasks]
 Coordinates=360,420,136,33
@@ -14,68 +14,69 @@ Coordinates=180,10,135,33
 Visible=False
 
 []
-Coordinates=300,1,58,33
+Coordinates=1240,110,106,69
 Visible=True
+LayerNames=NewLayer1
 
 [BindingsList1]
-Coordinates=189,263,82,33
+Coordinates=189,263,91,36
 
 [BindSourceDB_Users]
-Coordinates=600,10,121,303
-LayerNames=NewLayer0
+Coordinates=600,10,139,334
+LayerNames=
 
 [pnl_UData]
-Coordinates=50,720,65,33
+Coordinates=50,720,75,36
 
 [mmo_UComment]
-Coordinates=870,20,99,69
+Coordinates=870,20,114,80
 ExplicitSubNodes=Lines.Text
-LayerNames=NewLayer0
+LayerNames=
 
 [lbl_Desc_UComment]
-Coordinates=10,450,117,51
+Coordinates=10,450,135,58
 
 [edt_UContacts]
-Coordinates=870,190,87,51
-LayerNames=NewLayer0
+Coordinates=870,190,99,58
+LayerNames=
 
 [lbl_UContacts]
-Coordinates=20,380,83,51
+Coordinates=20,380,95,58
 
 [lbl_UInfo]
-Coordinates=22,314,58,51
+Coordinates=22,314,66,58
 
 [lbl_UCatalog]
-Coordinates=170,680,77,51
+Coordinates=170,680,88,58
 
 [dt_User1]
-Coordinates=870,120,115,51
-LayerNames=NewLayer0
+Coordinates=870,120,138,58
+LayerNames=
 
 [mmo_UserInfo]
-Coordinates=1070,70,86,51
-LayerNames=NewLayer0
+Coordinates=1070,70,98,58
+LayerNames=
 
 [edt_UCatalog]
-Coordinates=970,240,80,51
-LayerNames=NewLayer0
+Coordinates=970,240,93,58
+LayerNames=
 
 [tiUsers]
-Coordinates=10,530,49,33
+Coordinates=10,530,55,36
 
 [tiWorks]
-Coordinates=10,590,52,33
+Coordinates=10,590,57,36
 
 [tiTasks]
-Coordinates=160,450,49,33
+Coordinates=160,450,55,36
 
 [Panel1]
-Coordinates=160,647,47,33
+Coordinates=160,647,54,36
 
 [GridWorks]
-Coordinates=1340,440,66,267
+Coordinates=1340,440,75,322
 Visible=True
-LayerNames=NewLayer0
+LayerNames=
 
 [DataModule1.dsWorks]
 Coordinates=21,539,124,33
@@ -84,231 +85,230 @@ Coordinates=21,539,124,33
 Coordinates=371,514,121,33
 
 [lbl_WCatalog]
-Coordinates=20,640,79,51
+Coordinates=20,640,91,58
 
 [lbl_WInformation]
-Coordinates=179,502,98,51
+Coordinates=179,502,111,58
 
 [dt_WBegin]
-Coordinates=1360,870,115,51
-LayerNames=NewLayer0
+Coordinates=1360,870,138,58
+LayerNames=
 
 [dt_WEnd]
-Coordinates=1460,800,115,51
-LayerNames=NewLayer0
+Coordinates=1460,800,138,58
+LayerNames=
 
 [mmo_WInfo]
-Coordinates=1360,740,73,51
-LayerNames=NewLayer0
+Coordinates=1360,740,83,58
+LayerNames=
 
 [edt_WCatalog]
-Coordinates=1290,370,83,51
-LayerNames=NewLayer0
+Coordinates=1290,370,96,58
+LayerNames=
 
 [lbl_WCommentary]
-Coordinates=199,591,104,51
+Coordinates=199,591,120,58
 
 [mmo_WCommentary]
-Coordinates=1180,330,117,51
-LayerNames=NewLayer0
+Coordinates=1180,330,135,58
+LayerNames=
 
 [Panel2]
-Coordinates=48,159,47,33
+Coordinates=48,159,54,36
 
 [GridTasks]
-Coordinates=650,410,64,321
+Coordinates=650,410,73,388
 Visible=True
 
 [lbl_TRemarks]
-Coordinates=120,200,81,51
+Coordinates=120,200,94,58
 
 [mmo_TRemarks]
-Coordinates=760,590,94,51
+Coordinates=760,590,109,58
 Visible=True
 
 [dt_TBegin]
-Coordinates=650,790,115,51
+Coordinates=650,790,138,58
 
 [dt_TEnd]
-Coordinates=510,340,115,51
+Coordinates=510,340,138,58
 
 [lbl_TCommentary]
-Coordinates=146,141,101,51
+Coordinates=146,141,116,58
 
 [mmo_TCommentary]
-Coordinates=720,870,113,51
+Coordinates=720,870,131,58
 
 [Module Settings]
-ModelLayerNames=NewLayer0
+ModelLayerNames=
 ActiveLayerNames=
-EditingLayerName=NewLayer0
+EditingLayerName=
 
 [img_Graph]
-Coordinates=240,1000,68,51
+Coordinates=240,1000,78,58
 Visible=True
 
 [lbl_TGraph]
-Coordinates=146,1,68,51
+Coordinates=146,1,78,58
 
 [GridUsers]
-Coordinates=920,300,64,195
+Coordinates=920,300,72,234
 Visible=True
-LayerNames=NewLayer0
+LayerNames=
 
 [VD_DM.dsUsers]
-Coordinates=0,0,93,33
+Coordinates=0,0,110,36
 
 [VD_DM.FDT_Tasks]
-Coordinates=112,1,108,33
+Coordinates=112,1,129,36
 Visible=False
 
 [VD_DM.dsWorks]
-Coordinates=309,1,96,33
+Coordinates=309,1,112,36
 
 [VD_DM.FDT_works]
-Coordinates=309,233,108,33
+Coordinates=309,233,128,36
 Visible=False
 
 [VD_DM.FDT_Users]
-Coordinates=309,285,107,33
+Coordinates=309,285,128,36
 Visible=False
 
 [pnl_UTop]
-Coordinates=189,342,61,33
+Coordinates=189,342,70,36
 
 [btnAddUser]
-Coordinates=33,232,73,51
+Coordinates=33,232,82,58
 
 [aLST]
-Coordinates=258,1,40,33
+Coordinates=258,1,45,36
 
 [actAddUser]
-Coordinates=110,342,72,33
+Coordinates=110,342,81,36
 
 [actReopenTables]
-Coordinates=258,337,99,33
+Coordinates=258,337,115,36
 
 [actDeleteTask]
-Coordinates=455,351,83,33
+Coordinates=455,351,97,36
 
 [pnl_WorksTop]
-Coordinates=160,270,85,33
+Coordinates=160,270,97,36
 
 [actAddTask]
-Coordinates=192,413,72,33
+Coordinates=192,413,82,36
 
 [actDeleteWork]
-Coordinates=576,332,85,33
+Coordinates=576,332,99,36
 
 [Button2]
-Coordinates=455,1,53,51
+Coordinates=455,1,59,58
 
 [actAddWork]
-Coordinates=113,413,74,33
+Coordinates=113,413,84,36
 
 [pnl_TasksTop]
-Coordinates=200,790,83,33
+Coordinates=200,790,95,36
 
 [actDeleteUser]
-Coordinates=452,869,83,33
+Coordinates=452,869,96,36
 
 [Button4]
-Coordinates=310,180,53,51
+Coordinates=310,180,59,58
 
 [BindSourceDB_tasks]
-Coordinates=360,420,119,501
+Coordinates=360,420,136,552
 
 [BindSourceDB_works]
-Coordinates=1040,480,122,429
-LayerNames=NewLayer0
+Coordinates=1040,480,139,456
+LayerNames=
 
 [lbl_TUGraph]
-Coordinates=80,780,76,51
+Coordinates=80,780,87,58
 
 [img_TU_Graph]
-Coordinates=210,880,88,51
+Coordinates=210,880,102,58
 
 [nmbrbx_TPaid]
-Coordinates=620,990,85,51
+Coordinates=620,990,98,58
 
 [lbl_WPrice]
-Coordinates=70,970,66,51
+Coordinates=70,970,76,58
 
 [lbl_TPaid]
-Coordinates=70,850,60,51
+Coordinates=70,850,68,58
 
 [nmbrbx_WPaid]
-Coordinates=1210,910,89,51
+Coordinates=1210,910,102,58
 
 [dt_WPD]
-Coordinates=1350,950,115,51
+Coordinates=1350,950,138,58
 
 [nmbrbx_TPrice]
-Coordinates=720,940,89,51
+Coordinates=720,940,101,58
 Visible=True
 
 [lbl_WPaid]
-Coordinates=240,420,63,51
+Coordinates=240,420,72,58
 
 [lbl_TPrice]
-Coordinates=70,910,63,51
+Coordinates=70,910,72,58
 
 [dt_TPD]
-Coordinates=730,1050,115,51
+Coordinates=730,1050,138,58
 
 [nmbrbx_WPrice]
-Coordinates=900,800,92,51
+Coordinates=900,800,106,58
 
 [actTasksReport]
-Coordinates=459,78,91,33
+Coordinates=459,78,104,36
 
 [btn_TClearGraph]
-Coordinates=51,78,98,51
+Coordinates=51,78,114,58
 
 [btn_TSelectDir]
-Coordinates=0,313,87,51
+Coordinates=0,313,100,58
 
 [chk_TReport]
-Coordinates=534,417,77,51
+Coordinates=534,417,88,58
 
 [btn_TClearUGraph]
-Coordinates=475,1,105,51
+Coordinates=475,1,123,58
 
 [btnOpenExp]
-Coordinates=534,494,75,51
+Coordinates=534,494,86,58
 
 [VD_DM.FDQ_Images]
-Coordinates=1400,40,116,33
-Visible=False
+Coordinates=1526,50,138,58
 
 [btn1]
-Coordinates=315,410,40,51
+Coordinates=315,410,40,58
 
 [btn_WSelDir]
-Coordinates=0,0,75,51
+Coordinates=0,0,87,58
 
 [btn2]
-Coordinates=101,275,40,51
+Coordinates=101,275,40,58
 
 [pnl1]
-Coordinates=1260,40,40,33
-
-[Grid1]
-Coordinates=1290,140,41,51
-Visible=True
-
-[BindSourceDB1]
-Coordinates=1400,40,106,69
+Coordinates=1260,40,40,36
 
 [VD_DM.FDT_Images]
-Coordinates=777,267,114,51
+Coordinates=1440,160,136,36
+Visible=False
 
-[NavigatorBindSourceDB_works]
-Coordinates=759,190,170,51
+[grd1]
+Coordinates=1360,140,63,234
+Visible=True
+LayerNames=
 
-[NavigatorBindSourceDB_tasks]
-Coordinates=759,499,166,51
+[VD_DM.ds_Images]
+Coordinates=517,564,125,36
 
-[NavigatorBindSourceDB_Users]
-Coordinates=94,1,168,51
+[BindSourceDB1]
+Coordinates=1440,160,125,278
+
+[ImageControl1]
+Coordinates=1580,300,99,58
+Visible=True
 

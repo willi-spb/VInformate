@@ -117,9 +117,11 @@ type
     actTasksReport: TAction;
     chk_TReport: TCheckBox;
     pnl1: TPanel;
-    Grid1: TGrid;
+    grd1: TGrid;
     BindSourceDB1: TBindSourceDB;
     LinkGridToDataSourceBindSourceDB13: TLinkGridToDataSource;
+    ImageControl1: TImageControl;
+    LinkControlToField22: TLinkControlToField;
     procedure FormCreate(Sender: TObject);
     procedure actReopenTablesExecute(Sender: TObject);
     procedure actAddUserExecute(Sender: TObject);

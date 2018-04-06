@@ -68,6 +68,7 @@ type
     FDT_ImagesIDESC: TWideMemoField;
     FDT_ImagesCDATE: TDateTimeField;
     FDT_ImagesSIGN: TIntegerField;
+    ds_Images: TDataSource;
   private
     { Private declarations }
   public
